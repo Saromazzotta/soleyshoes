@@ -3,11 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
     <title>Document</title>
 </head>
 <body>
-    <h1>hello world</h1>
-    <p>testing</p>
-    <p>testing2</p>
+    <!-- added the code below to confirm info being sent to the front end, since the API requires
+    a key it is best for security reasons to have it on backend -->
+    {% for shoe in shoes %}
+
+    <div class="card" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{shoe.brand}}</li>
+            <li class="list-group-item">{{shoe.silhoutte}}</li>
+            <li class="list-group-item">{{shoe.colorway}}</li>
+            <li class="list-group-item">{{shoe.market_value}}</li>
+            <li class="list-group-item">{{shoe.gender}}</li>
+            <li class="list-group-item">{{shoe.name}}</li>
+            <li class="list-group-item">{{shoe.retailPrice}}</li>
+            <li class="list-group-item">{{shoe.story}}</li>
+        </ul>
+    </div>
+
+    {% endfor %}
 </body>
 </html>
