@@ -2,7 +2,8 @@ from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app import app
 
 # class for individual shoes. will need to be updated to hold photo
-class Shoe:
+class Shoe():
+
 
     def __init__(self, data):
 
@@ -19,7 +20,7 @@ class Shoe:
 # saves instance of the shoe from the API call
     @classmethod
     def save(cls, data):
-        query = 'INSERT INTO shoes (id, brand, silhoutte, colorway, market_value, gender, name, retailPrice, story) VALUES (%(id)s,%(brand)s,%(silhoutte)s,%(colorway)s,%(market_value)s,%(gender)s,%(name)s,%(retailPrice)s,%(story)s);'
+        query = 'INSERT INTO shoes (brand, silhoutte, colorway, market_value, gender, name, retailPrice, story) VALUES (%(brand)s,%(silhoutte)s,%(colorway)s,%(market_value)s,%(gender)s,%(name)s,%(retailPrice)s,%(story)s);'
 
         return connectToMySQL('kicks_kartel').query_db(query, data)
 

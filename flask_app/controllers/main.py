@@ -1,8 +1,12 @@
 from flask_app import app
-from flask_app.models import Shoe
+from flask_app.models.Shoe import Shoe
+from flask_app.models.user import User
+from flask_bcrypt import Bcrypt
 
 from flask import render_template, redirect, request, session, flash, jsonify
-import requests
+import requests, json
+
+bcrypt = Bcrypt(app)
 
 @app.route('/')
 def home():
@@ -15,7 +19,11 @@ def home():
 
     # url = "https://the-sneaker-database.p.rapidapi.com/sneakers"
 
-    # querystring = {"limit":"10"}
+
+    # querystring = {"brand":"Nike", "limit":"100"}
+    # querystring_2 = {"brand":"Adidas", "limit":"100"}
+    # querystring_3 = {"brand":"Jordan", "limit":"100"}
+    # querystring_4 = {"brand":"Puma", "limit":"100"}
 
     # headers = {
 	# "X-RapidAPI-Key": "56c2bc8b30msh20ce65860904590p11203bjsn1ce9c783dc28",
@@ -24,12 +32,11 @@ def home():
 
     # response = requests.get(url, headers=headers, params=querystring)
 
-
     
-    # for i in range(0,10,1):
+    
+    # for i in range(0,100,1):
 
     #     shoe = {
-    #         'id': response.json()['results'][i]['id'],
     #         'brand': response.json()['results'][i]['brand'],
     #         'silhoutte': response.json()['results'][i]['silhouette'],
     #         'colorway': response.json()['results'][i]['colorway'],
@@ -39,8 +46,46 @@ def home():
     #         'retailPrice': response.json()['results'][i]['retailPrice'],
     #         'story': response.json()['results'][i]['story']
     #     }
-    #     Shoe.Shoe.save(shoe)
+    #     Shoe.save(shoe)
+
+    return render_template('home.html', shoes = Shoe.get_all_shoes())
+
+@app.route('/register')
+def register_user_page():
+
+    return render_template('register/register.html')
+
+@app.route('/register/user', methods = ['POST'])
+def register_user():
+
+    if User.validate_user(request.form):
+        data = {
+            'first_name' : request.form['first_name'],
+            'last_name' : request.form['last_name'],
+            'email': request.form['email'],
+            'password' : bcrypt.generate_password_hash(request.form['password'])
+        }
+        id = User.save(data)
+        session['user_id'] = id
+        return redirect('/')
+    else:
+        return redirect('register')
     
+@app.route('/login')
+def login_user():
 
+    return render_template('login/login.html')
 
-    return render_template('home.html', shoes = Shoe.Shoe.get_all_shoes())
+@app.route('/login/user', methods = ['POST'])
+def login():
+
+    user = User.get_by_email(request.form)
+
+    if not user:
+        flash('invalid credentials', 'login')
+        return redirect('/login')
+    if not bcrypt.check_password_hash(user.password, request.form['password']):
+        flash('invalid credentials', 'login')
+        return redirect('/login')
+    session['user_id'] = user.id
+    return redirect('/')
