@@ -28,10 +28,14 @@ class Shoe():
 # gets all shoe instances currently in database
     @classmethod
     def get_all_shoes(cls):
+<<<<<<< HEAD
 
         query = 'SELECT * FROM shoes LIMIT 12;'
 
 
+=======
+        query = 'SELECT * FROM shoes limit 12;'
+>>>>>>> 3a62d3bd5700213cb85064506da96ecfa4742281
 
         shoes_from_db = connectToMySQL('kicks_kartel').query_db(query)
 
