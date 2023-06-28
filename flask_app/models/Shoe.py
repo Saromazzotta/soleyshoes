@@ -30,6 +30,9 @@ class Shoe():
     def get_all_shoes(cls):
         query = 'SELECT * FROM shoes LIMIT 12;'
 
+        query = 'SELECT * FROM shoes limit 12;'
+
+
         shoes_from_db = connectToMySQL('kicks_kartel').query_db(query)
 
         shoes = []
