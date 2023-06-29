@@ -54,3 +54,30 @@ def get_deals_user():
 
     return render_template('user/user_deals.html', shoes = Shoe.get_deals()) 
 
+@app.route('/add/cart/<int:id>')
+def add_to_cart(id):
+    if 'user_id' not in session:
+        return redirect('/')
+    id_data = {
+        'id': session['user_id']
+    }
+    data = {
+        'id': id,
+        'user_id': session['user_id']
+    }
+    User.add_to_cart(data)
+    session['shoe_id'] = id
+
+    return render_template('user/cart.html', shoes = Shoe.get_3_shoes(), user = User.add_to_cart(data))
+
+@app.route('/show/cart')
+def show_cart():
+    if 'user_id' not in session:
+        return redirect('/')
+    
+    if 'shoe_id' not in session:
+        return redirect('/user/home')
+    data = {
+        'id': session['shoe_id']
+    }
+    return render_template('user/cart_show.html', shoe = Shoe.get_one(data))
