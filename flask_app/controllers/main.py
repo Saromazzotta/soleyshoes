@@ -107,14 +107,6 @@ def get_deals():
 
     return render_template('shoe/deals.html', shoes = Shoe.get_deals())
     
-@app.route('/shoe/<int:id>')
-def get_shoe(id):
-
-    data = {
-        'id': id
-    }
-
-    return render_template('shoe/show_shoe.html', shoe = Shoe.get_one(data), shoes = Shoe.get_3_shoes())
     
 @app.route('/login')
 def login_user():

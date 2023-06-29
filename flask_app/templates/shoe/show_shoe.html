@@ -21,7 +21,6 @@
     </nav>
     <div class="col-12 d-flex justify-content-center">
         
-<<<<<<< HEAD
         <nav class="nav flex-column col-2 " style="background-color: #FB8500; border: 2px solid #219EBC;">
             <h1 class="text-center fs-2 m-4" style="font-family: 'Faster One'; color: #023047; text-shadow: 3px 3px 5px #8ECAE6; border-bottom: 2px solid #8ECAE6;">Soley Shoes</h1>
             <a class="nav-link mt-4 fs-5" href="/" style="font-family: 'Faster One';color: #023047; text-shadow: 2px 2px 2px #8ECAE6">Home</a>
@@ -84,35 +83,18 @@
                     </div>
                 </div>
             </div>
-=======
-        <nav class="nav flex-column col-2 " style="background-color: #FB8500">
-            <h1 class="text-center fs-8 m-4" style="font-family: 'Faster One'; color: #023047;">Soley Shoes</h1>
-            <a class="nav-link active mt-4" aria-current="page" href="/">Home</a>
-            <a class="nav-link mt-4" href="#">Link</a>
-            <a class="nav-link mt-4" href="#">Link</a>
-            <a class="nav-link disabled mt-4">Disabled</a>
->>>>>>> main
-        </nav>
+
         <div class="col-6 justify-content-center text-light text-center">
             <div class="col-12 mb-4">
                 <div>
 
                     <img src="{{shoe.image}}" class="img-fluid" alt="...">
-<<<<<<< HEAD
                     <div class="card-body" style="border: 2px solid #FB8500;">
                         <h5 class="card-title">{{shoe.silhoutte}}</h5>
                         <p class="card-text">{{shoe.colorway}}</p>
                         <p class="card-text">{{shoe.gender}}</p>
                         <p class="card-text">{{shoe.story}}</p>
                         <a href="/shoe/{{shoe.id}}" class="btn text-light" style="background-color: #FB8500; box-shadow: 2px 0px 8px #FB8500; border: 2px solid #FB8500">Add To Cart</a>
-=======
-                    <div class="card-body">
-                        <h5 class="card-title">{{shoe.silhoutte}}</h5>
-                        <p class="card-text">{{shoe.colorway}}</p>
-                        <p class="card-text">{{shoe.story}}</p>
-                        <a href="/shoe/{{shoe.id}}" class="btn btn-primary">Go somewhere</a>
->>>>>>> main
-                    </div>
                 </div>
             </div>
             <!-- added the code below to confirm info being sent to the front end, since the API requires
@@ -125,12 +107,8 @@
                     <div class="card-body">
                         <h5 class="card-title">{{shoe.silhoutte}}</h5>
                         <p class="card-text">{{shoe.colorway}}</p>
-<<<<<<< HEAD
                         <p class="card-text">{{shoe.gender}}</p>
                         <a href="/shoe/{{shoe.id}}" class="btn text-light" style="background-color: #023047; box-shadow: 2px 2px 5px #FB8500;">Buy For  ${{shoe.retailPrice}}</a>
-=======
-                        <a href="/shoe/{{shoe.id}}" class="btn btn-primary">Go somewhere</a>
->>>>>>> main
                     </div>
                 </div>
                 {% endfor %}
