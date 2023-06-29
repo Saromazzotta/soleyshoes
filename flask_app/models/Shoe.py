@@ -130,3 +130,19 @@ class Shoe():
                 results = connectToMySQL('kicks_kartel').query_db(query, data)
 
                 return cls(results[0])
+        
+        @classmethod
+        def get_deals(cls):
+
+                query = 'select * from shoes where market_value < retailPrice;'
+
+
+
+                shoes_from_db = connectToMySQL('kicks_kartel').query_db(query)
+
+                shoes = []
+
+                for shoe in shoes_from_db:
+                        shoes.append(cls(shoe))
+
+                return shoes

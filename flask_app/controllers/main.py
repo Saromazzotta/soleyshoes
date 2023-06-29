@@ -70,7 +70,8 @@ def register_user():
         session['user_id'] = id
         return redirect('/')
     else:
-        return redirect('register')
+        return redirect('/register')
+    
     
 @app.route('/shoe/<int:id>')
 def get_shoe(id):
@@ -100,6 +101,11 @@ def get_jordan():
 def get_puma():
 
     return render_template('shoe/puma.html', shoes = Shoe.get_puma())
+
+@app.route('/shoe/deals')
+def get_deals():
+
+    return render_template('shoe/deals.html', shoes = Shoe.get_deals())
     
 @app.route('/login')
 def login_user():
@@ -118,4 +124,9 @@ def login():
         flash('invalid credentials', 'login')
         return redirect('/login')
     session['user_id'] = user.id
+    return redirect('/user/home')
+
+@app.route('/logout')
+def logout():
+    session.clear()
     return redirect('/')
