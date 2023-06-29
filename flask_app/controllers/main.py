@@ -20,7 +20,7 @@ def home():
     # url = "https://the-sneaker-database.p.rapidapi.com/sneakers"
 
 
-    # querystring = {"brand":"Puma", "limit":"100"}
+    # querystring = {"brand":"Jordan", "limit":"100"}
     # querystring_2 = {"brand":"Adidas", "limit":"100"}
     # querystring_3 = {"brand":"Jordan", "limit":"100"}
     # querystring_4 = {"brand":"Puma", "limit":"100"}
@@ -68,7 +68,7 @@ def register_user():
         }
         id = User.save(data)
         session['user_id'] = id
-        return redirect('/')
+        return redirect('/user/home')
     else:
         return redirect('/register')
     
