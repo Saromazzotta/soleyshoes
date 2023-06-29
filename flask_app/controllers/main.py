@@ -80,6 +80,26 @@ def get_shoe(id):
     }
 
     return render_template('shoe/show_shoe.html', shoe = Shoe.get_one(data), shoes = Shoe.get_3_shoes())
+
+@app.route('/shoe/brand/nike')
+def get_nikes():
+
+    return render_template('shoe/nike.html', shoes = Shoe.get_nike())
+
+@app.route('/shoe/brand/adidas')
+def get_adidas():
+
+    return render_template('shoe/adidas.html', shoes = Shoe.get_adidas())
+
+@app.route('/shoe/brand/jordan')
+def get_jordan():
+
+    return render_template('shoe/jordan.html', shoes = Shoe.get_jordan())
+
+@app.route('/shoe/brand/puma')
+def get_puma():
+
+    return render_template('shoe/puma.html', shoes = Shoe.get_puma())
     
 @app.route('/login')
 def login_user():

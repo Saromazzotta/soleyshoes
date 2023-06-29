@@ -33,12 +33,12 @@
                 <div>
 
                     <img src="{{shoe.image}}" class="img-fluid" alt="...">
-                    <div class="card-body">
+                    <div class="card-body" style="border: 2px solid #FB8500;">
                         <h5 class="card-title">{{shoe.silhoutte}}</h5>
                         <p class="card-text">{{shoe.colorway}}</p>
                         <p class="card-text">{{shoe.gender}}</p>
                         <p class="card-text">{{shoe.story}}</p>
-                        <a href="/shoe/{{shoe.id}}" class="btn btn-primary">Go somewhere</a>
+                        <a href="/shoe/{{shoe.id}}" class="btn text-light" style="background-color: #FB8500; box-shadow: 2px 0px 8px #FB8500; border: 2px solid #FB8500">Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                         <h5 class="card-title">{{shoe.silhoutte}}</h5>
                         <p class="card-text">{{shoe.colorway}}</p>
                         <p class="card-text">{{shoe.gender}}</p>
-                        <a href="/shoe/{{shoe.id}}" class="btn btn-primary">Buy For  ${{shoe.retailPrice}}</a>
+                        <a href="/shoe/{{shoe.id}}" class="btn text-light" style="background-color: #023047; box-shadow: 2px 2px 5px #FB8500;">Buy For  ${{shoe.retailPrice}}</a>
                     </div>
                 </div>
                 {% endfor %}
