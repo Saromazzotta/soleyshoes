@@ -24,7 +24,7 @@
         <nav class="nav flex-column col-2 " style="background-color: #FB8500; border: 2px solid #219EBC;">
             <h1 class="text-center fs-2 m-4" style="font-family: 'Faster One'; color: #023047; text-shadow: 3px 3px 5px #8ECAE6; border-bottom: 2px solid #8ECAE6;">Soley Shoes</h1>
             <a class="nav-link mt-4 fs-5" href="/" style="font-family: 'Faster One';color: #023047; text-shadow: 2px 2px 2px #8ECAE6">Home</a>
-            <a class="nav-link mt-4 fs-5" href="/login" style="font-family: 'Faster One';color: #023047; text-shadow: 2px 2px 2px #8ECAE6">Login</a>
+
             <a class="nav-link mt-4 fs-5" href="/shoe/deals" style="font-family: 'Faster One';color: #023047; text-shadow: 2px 2px 2px #8ECAE6">Solely Deals</a>
             <ul class="nav nav-pills">
                 <li class="nav-item dropdown mt-4">
@@ -83,7 +83,7 @@
                     </div>
                 </div>
             </div>
-
+        </nav>
         <div class="col-6 justify-content-center text-light text-center">
             <div class="col-12 mb-4">
                 <div>
@@ -94,7 +94,8 @@
                         <p class="card-text">{{shoe.colorway}}</p>
                         <p class="card-text">{{shoe.gender}}</p>
                         <p class="card-text">{{shoe.story}}</p>
-                        <a href="/shoe/{{shoe.id}}" class="btn text-light" style="background-color: #FB8500; box-shadow: 2px 0px 8px #FB8500; border: 2px solid #FB8500">Add To Cart</a>
+                        <a href="/login" class="btn text-light" style="background-color: #FB8500; box-shadow: 2px 0px 8px #FB8500; border: 2px solid #FB8500">Login</a>
+                    </div>
                 </div>
             </div>
             <!-- added the code below to confirm info being sent to the front end, since the API requires
@@ -113,14 +114,13 @@
                 </div>
                 {% endfor %}
             </div>
-    
             <div>
-                <div class="footer-basic">
+                <div class="footer-basic text-center">
                     <footer>
-                        <div class="social m-4"><a href="#"><i class="icon ion-social-instagram ms-2"></i></a><a href="#"><i
-                                    class="icon ion-social-snapchat ms-2"></i></a><a href="#"><i
-                                    class="icon ion-social-twitter ms-2"></i></a><a href="#"><i
-                                    class="icon ion-social-facebook ms-2"></i></a></div>
+                        <div class="social m-4"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i
+                                    class="icon ion-social-snapchat ms-4"></i></a><a href="#"><i
+                                    class="icon ion-social-twitter ms-4"></i></a><a href="#"><i
+                                    class="icon ion-social-facebook ms-4"></i></a></div>
                         <ul class="list-inline">
                             <li class="list-inline-item"><a href="#">Home</a></li>
                             <li class="list-inline-item"><a href="#">Services</a></li>
@@ -128,7 +128,7 @@
                             <li class="list-inline-item"><a href="#">Terms</a></li>
                             <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
                         </ul>
-                        <p class="copyright">KicksKartel© 2023</p>
+                        <p class="copyright text-light">Solely Shoes© 2023</p>
                     </footer>
                 </div>
             </div>
