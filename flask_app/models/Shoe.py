@@ -42,6 +42,7 @@ class Shoe():
 
                 return shoes
         
+<<<<<<< HEAD
         @classmethod
         def get_nike(cls):
 
@@ -106,6 +107,8 @@ class Shoe():
 
                 return shoes
         
+=======
+>>>>>>> main
         # gets 3 random shoes to display in view shoe
         @classmethod
         def get_3_shoes(cls):
@@ -130,6 +133,7 @@ class Shoe():
                 results = connectToMySQL('kicks_kartel').query_db(query, data)
 
                 return cls(results[0])
+<<<<<<< HEAD
         
         @classmethod
         def get_deals(cls):
@@ -146,3 +150,5 @@ class Shoe():
                         shoes.append(cls(shoe))
 
                 return shoes
+=======
+>>>>>>> main
