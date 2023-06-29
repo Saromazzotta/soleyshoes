@@ -42,6 +42,76 @@ class Shoe():
 
                 return shoes
         
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        @classmethod
+        def get_nike(cls):
+
+                query = "SELECT * FROM shoes where shoes.brand = 'Nike' order by rand() limit 18;"
+
+
+
+                shoes_from_db = connectToMySQL('kicks_kartel').query_db(query)
+
+                shoes = []
+
+                for shoe in shoes_from_db:
+                        shoes.append(cls(shoe))
+
+                return shoes
+        
+        @classmethod
+        def get_adidas(cls):
+
+                query = "SELECT * FROM shoes where shoes.brand = 'Adidas' order by rand() limit 18;"
+
+
+
+                shoes_from_db = connectToMySQL('kicks_kartel').query_db(query)
+
+                shoes = []
+
+                for shoe in shoes_from_db:
+                        shoes.append(cls(shoe))
+
+                return shoes
+        
+        @classmethod
+        def get_jordan(cls):
+
+                query = "SELECT * FROM shoes where shoes.brand = 'Jordan' order by rand() limit 18;"
+
+
+
+                shoes_from_db = connectToMySQL('kicks_kartel').query_db(query)
+
+                shoes = []
+
+                for shoe in shoes_from_db:
+                        shoes.append(cls(shoe))
+
+                return shoes
+
+        @classmethod
+        def get_puma(cls):
+
+                query = "SELECT * FROM shoes where shoes.brand = 'Puma' order by rand() limit 18;"
+
+
+
+                shoes_from_db = connectToMySQL('kicks_kartel').query_db(query)
+
+                shoes = []
+
+                for shoe in shoes_from_db:
+                        shoes.append(cls(shoe))
+
+                return shoes
+        
+=======
+>>>>>>> main
+>>>>>>> front
         # gets 3 random shoes to display in view shoe
         @classmethod
         def get_3_shoes(cls):
@@ -66,3 +136,25 @@ class Shoe():
                 results = connectToMySQL('kicks_kartel').query_db(query, data)
 
                 return cls(results[0])
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        
+        @classmethod
+        def get_deals(cls):
+
+                query = 'select * from shoes where market_value < retailPrice;'
+
+
+
+                shoes_from_db = connectToMySQL('kicks_kartel').query_db(query)
+
+                shoes = []
+
+                for shoe in shoes_from_db:
+                        shoes.append(cls(shoe))
+
+                return shoes
+=======
+>>>>>>> main
+>>>>>>> front

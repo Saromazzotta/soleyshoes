@@ -70,7 +70,51 @@ def register_user():
         session['user_id'] = id
         return redirect('/')
     else:
-        return redirect('register')
+        return redirect('/register')
+    
+    
+@app.route('/shoe/<int:id>')
+def get_shoe(id):
+
+    data = {
+        'id': id
+    }
+
+    return render_template('shoe/show_shoe.html', shoe = Shoe.get_one(data), shoes = Shoe.get_3_shoes())
+
+@app.route('/shoe/brand/nike')
+def get_nikes():
+
+    return render_template('shoe/nike.html', shoes = Shoe.get_nike())
+
+@app.route('/shoe/brand/adidas')
+def get_adidas():
+
+    return render_template('shoe/adidas.html', shoes = Shoe.get_adidas())
+
+@app.route('/shoe/brand/jordan')
+def get_jordan():
+
+    return render_template('shoe/jordan.html', shoes = Shoe.get_jordan())
+
+@app.route('/shoe/brand/puma')
+def get_puma():
+
+    return render_template('shoe/puma.html', shoes = Shoe.get_puma())
+
+@app.route('/shoe/deals')
+def get_deals():
+
+    return render_template('shoe/deals.html', shoes = Shoe.get_deals())
+    
+@app.route('/shoe/<int:id>')
+def get_shoe(id):
+
+    data = {
+        'id': id
+    }
+
+    return render_template('shoe/show_shoe.html', shoe = Shoe.get_one(data), shoes = Shoe.get_3_shoes())
     
 @app.route('/shoe/<int:id>')
 def get_shoe(id):
@@ -98,4 +142,9 @@ def login():
         flash('invalid credentials', 'login')
         return redirect('/login')
     session['user_id'] = user.id
+    return redirect('/user/home')
+
+@app.route('/logout')
+def logout():
+    session.clear()
     return redirect('/')
