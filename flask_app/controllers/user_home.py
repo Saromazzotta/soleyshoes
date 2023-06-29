@@ -76,7 +76,7 @@ def show_cart():
         return redirect('/')
     
     if 'shoe_id' not in session:
-        return redirect('/user/home')
+        return render_template('/user/cart_empty.html')
     data = {
         'id': session['shoe_id']
     }
