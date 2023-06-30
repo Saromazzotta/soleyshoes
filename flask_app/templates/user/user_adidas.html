@@ -14,7 +14,7 @@
     <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
 
 
-    <title>Landing Page</title>
+    <title>Brand: Adidas</title>
 </head>
 
 <body style="background-color: #023047;">
@@ -23,7 +23,7 @@
     <div class="col-12 d-flex justify-content-center">
         
         <nav class="nav flex-column col-2 " style="background-color: #FB8500; border: 2px solid #219EBC;">
-            <h1 class="text-center fs-2 m-4" style="font-family: 'Faster One'; color: #023047; text-shadow: 3px 3px 5px #8ECAE6; border-bottom: 2px solid #8ECAE6;">Soley Shoes</h1>
+            <h1 class="text-center fs-2 m-4" style="font-family: 'Faster One'; color: #023047; text-shadow: 3px 3px 5px #8ECAE6; border-bottom: 2px solid #8ECAE6;">Solely Shoes</h1>
             <a class="nav-link mt-4 fs-5" href="/user/home" style="font-family: 'Faster One';color: #023047; text-shadow: 2px 2px 2px #8ECAE6">Home</a>
             <a class="nav-link mt-4 fs-5" href="/shoe/user/deals" style="font-family: 'Faster One';color: #023047; text-shadow: 2px 2px 2px #8ECAE6">Solely Deals</a>
             <ul class="nav nav-pills">
@@ -96,7 +96,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{shoe.silhoutte}}</h5>
                             <p class="card-text">{{shoe.colorway}}</p>
-                            <a href="/shoe/{{shoe.id}}" class="btn text-light" style="background-color: #023047; box-shadow: 2px 2px 5px #FB8500;">Buy For ${{shoe.retailPrice}}</a>
+                            <a href="/shoe/user/{{shoe.id}}" class="btn text-light" style="background-color: #023047; box-shadow: 2px 2px 5px #FB8500;">Buy For ${{shoe.retailPrice}}</a>
                         </div>
                     </div>
                     {% endfor %}

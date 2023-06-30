@@ -1,4 +1,5 @@
 from flask_app.config.mysqlconnection import connectToMySQL
+from flask_app.models.Shoe import Shoe
 from flask_app import app
 from flask import flash
 import re
@@ -19,7 +20,7 @@ class User:
         self.password = data['password']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
-        self.wallet = None
+        self.cart = None
 
 # Validates all user info inputed to the form
     @staticmethod
@@ -100,3 +101,29 @@ class User:
         query = 'UPDATE users SET first_name = %(first_name)s, last_name = %(last_name)s WHERE id = %(id)s;'
 
         return connectToMySQL('kicks_kartel').query_db(query, data)
+    
+    @classmethod
+    def add_to_cart(cls, data):
+                query = 'SELECT * FROM users LEFT JOIN shoes On users.id WHERE shoes.id = %(id)s and users.id = %(user_id)s;'
+
+                results = connectToMySQL('kicks_kartel').query_db(query, data)
+
+                result = results[0]
+                this_user = cls(result)
+
+                shoe_data = {
+                    'id': result['shoes.id'],
+                    'brand': result['brand'],
+                    'silhoutte': result['silhoutte'],
+                    'colorway': result['colorway'],
+                    'market_value': result['market_value'],
+                    'gender': result['gender'],
+                    'name': result['name'],
+                    'retailPrice': result['retailPrice'],
+                    'story': result['story'],
+                    'image': result['image']
+
+                }
+                this_user.cart = Shoe(shoe_data)
+
+                return this_user
