@@ -1,5 +1,11 @@
 # kickskartel
+# An e commerce shop for all your favorite shoe brands
+#Group graudation project for Coding Dojo, a full-stack web development bootcamp.
 
-#Group project for Coding Dojo
+#Technologies used:
+    #Python with a flask framework
+    #MySQL Database
+    #Api to prepopulate sample shoe data
 
-#Will utilize an API and other technology to implement a e commerce site for shoes.
+#Demo Video
+<video src='https://www.youtube.com/watch?v=X3l4zwwH098' width=180/>
