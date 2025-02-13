@@ -8,4 +8,6 @@ Group graduation project for Coding Dojo, a full-stack web development boot camp
 - MySQL Database
 - Api to prepopulate sample shoe data
 
+
+# Video Demo
 [![Soley Shoes](https://img.youtube.com/vi/X3l4zwwH098/0.jpg)](https://youtu.be/X3l4zwwH098)
